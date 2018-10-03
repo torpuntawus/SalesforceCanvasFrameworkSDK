@@ -77,6 +77,6 @@
     }
 </script>
 
-<a id="ctxlink" href="#">Get Context</a>
+<a id="ctxlink" href="www.Google.com">Get Context</a>
 </body>
 </html>
