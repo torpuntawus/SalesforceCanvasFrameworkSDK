@@ -6,6 +6,7 @@
     String[] signedRequest = parameters.get("signed_request");
     if (signedRequest == null) {%>
         This App must be invoked via a signed request!<%
+		
         return;
     }
     String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
@@ -40,6 +41,23 @@
         });
 
     </script>
+	<script>
+    function callback(msg) {
+       if (msg.status !== 200) {
+          alert("Error: " + msg.status);
+          return;
+       }
+       alert("Payload: ", msg.payload);
+    }
+                
+    var ctxlink = Sfdc.canvas.byId("ctxlink");
+    var client = Sfdc.canvas.oauth.client();
+    ctxlink.onclick=function() {
+       Sfdc.canvas.client.ctx(callback, client)};
+    }
+	</script>
+
+<a id="ctxlink" href="#">Get Context</a>
 </head>
 <body>
     <br/>
