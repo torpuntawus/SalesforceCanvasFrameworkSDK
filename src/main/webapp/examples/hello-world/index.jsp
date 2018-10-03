@@ -61,6 +61,6 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
-	<a id="ctx" href="#">Go</a>
+	<a id="ctx" href="draw();">Go</a>
 </body>
 </html>
