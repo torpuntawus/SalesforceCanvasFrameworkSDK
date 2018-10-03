@@ -57,10 +57,11 @@
     }
 	</script>
 
-<a id="ctxlink" href="#">Get Context</a>
+
 </head>
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
+	<a id="ctxlink" href="test">Go</a>
 </body>
 </html>
