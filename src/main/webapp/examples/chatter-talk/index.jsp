@@ -61,22 +61,5 @@
         </script>
     </section>
 </div>
-<script>
-    function callback(msg) {
-       if (msg.status !== 200) {
-          alert("Error: " + msg.status);
-          return;
-       }
-       alert("Payload: ", msg.payload);
-    }
-                
-    var ctxlink = Sfdc.canvas.byId("ctxlink");
-    var client = Sfdc.canvas.oauth.client();
-    ctxlink.onclick=function() {
-       Sfdc.canvas.client.ctx(callback, client)};
-    }
-</script>
-
-<a id="ctxlink" href="www.Google.com">Get Context</a>
 </body>
 </html>
