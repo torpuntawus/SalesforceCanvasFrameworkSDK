@@ -42,17 +42,19 @@
 
     </script>
 	<script>
-    function draw() {
-	var ctx = document.getElementById('canvas').getContext('2d');
-	var img = new Image();
-	img.onload = function() {
-		for (var i = 0; i < 4; i++) {
-			for (var j = 0; j < 3; j++) {
-				ctx.drawImage(img, j * 50, i * 38, 50, 38);
-				}
-			}
-		};
-	img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
+    function callback(msg) {
+       if (msg.status !== 200) {
+          alert("Error: " + msg.status);
+          return;
+       }
+       alert("Payload: ", msg.payload);
+    }
+                
+    var ctxlink = Sfdc.canvas.byId("ctxlink");
+    var client = Sfdc.canvas.oauth.client();
+    ctxlink.onclick=function() {
+		alert("Test1: ");
+		Sfdc.canvas.client.ctx(callback, client)};
     }
 	</script>
 
@@ -61,6 +63,6 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
-	<a id="ctx" href="draw();">Go</a>
+	<a id="ctxlink" href="#">Go</a>
 </body>
 </html>
