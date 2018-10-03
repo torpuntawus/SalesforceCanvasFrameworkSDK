@@ -62,6 +62,6 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
-	<a id="ctxlink" href="chat.jsp">Go</a>
+	<a id="ctxlink" href="#">Go</a>
 </body>
 </html>
