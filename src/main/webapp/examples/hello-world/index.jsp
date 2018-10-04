@@ -37,7 +37,7 @@
             var sr = JSON.parse('<%=signedRequestJson%>');
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
         });
 
     </script>
