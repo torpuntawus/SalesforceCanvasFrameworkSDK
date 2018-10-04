@@ -37,13 +37,14 @@
             var sr = JSON.parse('<%=signedRequestJson%>');
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = sr.context;
+            Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
 
     </script>
 	<script>
     function clickedTheButton() {
-	Sfdc.canvas.byId('username').innerHTML += "Test !!!";
+	<!-- Sfdc.canvas.byId('username').innerHTML += "Test !!!"; -->
+	Sfdc.canvas.byId('showSigned').innerHTML = JSON.parse('<%=signedRequestJson%>');
 
 } 
 	</script>
@@ -53,6 +54,7 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
+	<p id="showSigned"></p>
 	<button onclick="clickedTheButton()">Click me</button>
 	<form action="t.html">
     <button type="submit">Go</button>
