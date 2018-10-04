@@ -54,7 +54,9 @@
     <h1>Hello <span id='username'></span></h1>
 	<button onclick="clickedTheButton()">Click me</button>
 	<form action="t.html">
-    <button type="submit">Login</button>
+    <button type="submit">Go</button>
+	<form action="\webapp\examples\index.jsp">
+    <button type="submit">Chat</button>
 </form>
 </body>
 </html>
