@@ -40,20 +40,6 @@
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
-			// Reference the Chatter user's URL from Context.Links object.
-			var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
-			var body = {body : {messageSegments : [{type: "Text", text: "Some Chatter Post"}]}};
-
-			Sfdc.canvas.client.ajax(url,
-			{client : sr.client,
-			method: 'POST',
-			contentType: "application/json",
-			data: JSON.stringify(body),
-			success : function(data) {
-			if (201 === data.status) {
-				alert("Success");
-				}
-			}
         });
 
     </script>
@@ -61,9 +47,9 @@
 </head>
 <body>
     <br/>
-	<p>Context</p>
+	<h1>Context</h1>
     <span id='username'></span>
-	<p>Signed Request</p>
+	<h2>Signed Request</h2>
     <span id='signedRequest'></span>
 </body>
 </html>
