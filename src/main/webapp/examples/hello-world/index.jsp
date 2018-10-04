@@ -43,10 +43,11 @@
     </script>
 	<script>
     function clickedTheButton() {
-	var sr = JSON.parse('<%=signedRequestJson%>');
+	<!-- var sr = JSON.parse('<%=signedRequestJson%>');
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('showSigned').innerHTML = sr;
+            Sfdc.canvas.byId('showSigned').innerHTML = JSON.parse('<%=signedRequestJson%>'); -->
+	document.getElementById("showSigned").innerHTML = JSON.parse('<%=signedRequestJson%>');
 
 
 	</script>
