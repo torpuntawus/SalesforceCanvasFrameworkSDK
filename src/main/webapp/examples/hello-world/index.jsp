@@ -47,7 +47,7 @@
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('showSigned').innerHTML = JSON.parse('<%=signedRequestJson%>'); -->
-	document.getElementById("showSigned").innerHTML = JSON.parse('<%=signedRequestJson%>');
+	document.getElementById("showSigned").innerHTML = parameters.get("signed_request");
 
 
 	</script>
@@ -59,6 +59,6 @@
 	<p>Context</p>
     <span id='username'></span>
 	<p id="showSigned"></p>
-	<button onclick="clickedTheButton()">Click me</button>
+	<button onclick="clickedTheButton()">Click</button>
 </body>
 </html>
