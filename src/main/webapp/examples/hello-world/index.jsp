@@ -38,27 +38,17 @@
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+			Sfdc.canvas.byId('signedRequest').innerHTML = JSON.stringify(signedRequestJson);
         });
 
     </script>
-	<script>
-    function clickedTheButton() {
-	<!-- var sr = JSON.parse('<%=signedRequestJson%>');
-            // Save the token
-            Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('showSigned').innerHTML = JSON.parse('<%=signedRequestJson%>'); -->
-	document.getElementById("showSigned").innerHTML = parameters.get("signed_request");
-
-
-	</script>
-
 
 </head>
 <body>
     <br/>
 	<p>Context</p>
     <span id='username'></span>
-	<p id="showSigned"></p>
-	<button onclick="clickedTheButton()">Click</button>
+	<p>Signed Request</p>
+    <span id='signedRequest'></span>
 </body>
 </html>
