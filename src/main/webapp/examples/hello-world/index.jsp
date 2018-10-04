@@ -43,25 +43,9 @@
     </script>
 	<script>
     function clickedTheButton() {
+	var jsonStr = JSON.stringify(sr);
 	<!-- Sfdc.canvas.byId('username').innerHTML += "Test !!!"; -->
-	Sfdc.canvas.byId('showSigned').innerHTML = JSON.parse('<%=signedRequestJson%>');
-
-} <script>
-    function callback(msg) {
-       if (msg.status !== 200) {
-          alert("Error: " + msg.status);
-          return;
-       }
-       alert("Payload: ", msg.payload);
-    }
-                
-    var ctxlink = Sfdc.canvas.byId("ctxlink");
-    var client = Sfdc.canvas.oauth.client();
-    ctxlink.onclick=function() {
-       Sfdc.canvas.client.ctx(callback, client)};
-	   Sfdc.canvas.byId('showSigned').innerHTML = client;
-    }
-</script>
+	Sfdc.canvas.byId('showSigned').innerHTML = jsonStr;
 
 
 	</script>
@@ -73,9 +57,5 @@
     <h1>Hello <span id='username'></span></h1>
 	<p id="showSigned"></p>
 	<button onclick="clickedTheButton()">Click me</button>
-	<form action="t.html">
-    <button type="submit">Go</button>
-	</form>	
-	<a id="ctxlink" href="#">Get Context</a>
 </body>
 </html>
