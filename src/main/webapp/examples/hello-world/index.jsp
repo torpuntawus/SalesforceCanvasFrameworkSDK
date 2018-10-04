@@ -42,19 +42,9 @@
 
     </script>
 	<script>
-    function callback(msg) {
-       if (msg.status !== 200) {
-          alert("Error: " + msg.status);
-          return;
-       }
-       alert("Payload: ", msg.payload);
-    }
-                
-    var ctxlink = Sfdc.canvas.byId("ctxlink");
-    var client = Sfdc.canvas.oauth.client();
-    ctxlink.onclick=function() {
-		Sfdc.canvas.client.ctx(callback, client)};
-    }
+    function clickedTheButton() {
+	Sfdc.canvas.byId('username').innerHTML += "Test !!!";
+} 
 	</script>
 
 
@@ -62,6 +52,6 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
-	<a id="ctxlink" href="#">Go</a>
+	<button onclick="clickedTheButton()">Click me</button>
 </body>
 </html>
