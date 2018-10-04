@@ -55,8 +55,8 @@
 	<button onclick="clickedTheButton()">Click me</button>
 	<form action="t.html">
     <button type="submit">Go</button>
+	</form>	
 	<form action="\webapp\examples\chatter-talk\chatter.jsp">
     <button type="submit">Chat</button>
-</form>
 </body>
 </html>
