@@ -56,7 +56,7 @@
 	<form action="t.html">
     <button type="submit">Go</button>
 	</form>	
-	<form action="C:\SalesforceCanvasFrameworkSDK\src\main\webapp\examples\chatter-talk\chatter.jsp">
-    <button type="submit">Chat</button>
+	<form action="\chatter-talk\chatter.jsp">
+    <button type="submit">Chat</button></form>
 </body>
 </html>
