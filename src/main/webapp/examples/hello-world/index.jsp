@@ -43,7 +43,11 @@
     </script>
 	<script>
     function clickedTheButton() {
-	Sfdc.canvas.byId('username').innerHTML += "Test !!!";
+	<!-- Sfdc.canvas.byId('username').innerHTML += "Test !!!"; -->
+	  var sr = JSON.parse('<%=signedRequestJson%>');
+            // Save the token
+            Sfdc.canvas.oauth.token(sr.oauthToken);
+            Sfdc.canvas.action="https://testcanvas-tor.herokuapp.com/examples/chatter-talk/chatter.jsp";
 } 
 	</script>
 
@@ -56,7 +60,7 @@
 	<form action="t.html">
     <button type="submit">Go</button>
 	</form>	
-	<form action="\chatter-talk\chatter.jsp">
+	<form action="https://testcanvas-tor.herokuapp.com/examples/chatter-talk/chatter.jsp">
     <button type="submit">Chat</button></form>
 </body>
 </html>
