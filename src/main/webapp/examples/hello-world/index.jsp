@@ -53,7 +53,6 @@
     var ctxlink = Sfdc.canvas.byId("ctxlink");
     var client = Sfdc.canvas.oauth.client();
     ctxlink.onclick=function() {
-		alert("Test1: ");
 		Sfdc.canvas.client.ctx(callback, client)};
     }
 	</script>
