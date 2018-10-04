@@ -43,7 +43,7 @@
     </script>
 	<script>
     function clickedTheButton() {
-	var jsonStr = JSON.stringify(sr);
+	var jsonStr = JSON.stringify(sr.context);
 	<!-- Sfdc.canvas.byId('username').innerHTML += "Test !!!"; -->
 	Sfdc.canvas.byId('showSigned').innerHTML = jsonStr;
 
