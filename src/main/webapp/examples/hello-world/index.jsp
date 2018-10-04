@@ -53,5 +53,6 @@
     <br/>
     <h1>Hello <span id='username'></span></h1>
 	<button onclick="clickedTheButton()">Click me</button>
+	<button onclick="window.location='http://www.google.com';">Visit Page Now</button>
 </body>
 </html>
