@@ -37,7 +37,7 @@
             var sr = JSON.parse('<%=signedRequestJson%>');
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+            Sfdc.canvas.byId('username').innerHTML = sr.context;
         });
 
     </script>
@@ -57,7 +57,5 @@
 	<form action="t.html">
     <button type="submit">Go</button>
 	</form>	
-	<form action="https://testcanvas-tor.herokuapp.com/examples/chatter-talk/chatter.jsp">
-    <button type="submit">Chat</button></form>
 </body>
 </html>
