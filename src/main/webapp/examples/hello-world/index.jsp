@@ -43,11 +43,8 @@
     </script>
 	<script>
     function clickedTheButton() {
-	<!-- Sfdc.canvas.byId('username').innerHTML += "Test !!!"; -->
-	  var sr = JSON.parse('<%=signedRequestJson%>');
-            // Save the token
-            Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.action="https://testcanvas-tor.herokuapp.com/examples/chatter-talk/chatter.jsp";
+	Sfdc.canvas.byId('username').innerHTML += "Test !!!";
+
 } 
 	</script>
 
