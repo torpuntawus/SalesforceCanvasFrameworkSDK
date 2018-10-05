@@ -42,7 +42,7 @@ if (!chatterTalk) {
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
 
         // Make an XHR call back to salesforce through the supplied browser proxy.
-        $$.canvas.client.ajax(chatterUsersUrl,
+        $$.client.ajax(chatterUsersUrl,
             {client : sr.client,
                 success : function(data){
                     // Make sure the status code is OK.
