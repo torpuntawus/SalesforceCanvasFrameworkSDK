@@ -57,7 +57,7 @@
             }
             var sr = JSON.parse('<%=signedRequestJson%>');
             chatterTalk.init(sr, "chatter-submit", "speech-input-field", function(data) {
-                Sfdc.canvas.byId('status').innerHTML = data.statusText;
+                Sfdc.canvas.byId('status').innerHTML = data.statusText+"Test";
             });
         </script>
     </section>
