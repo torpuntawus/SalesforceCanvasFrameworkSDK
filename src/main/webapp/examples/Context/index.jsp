@@ -40,8 +40,7 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
-            Sfdc.canvas.client.publish(sr.client,
-                {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
+           
 
         });
 
