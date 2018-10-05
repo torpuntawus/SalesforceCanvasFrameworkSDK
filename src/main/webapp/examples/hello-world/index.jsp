@@ -36,6 +36,11 @@
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
 
+			// Save the token
+            Sfdc.canvas.oauth.token(sr.oauthToken);
+            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+
 			// Reference the Chatter user's URL from Context.Links object.
 			var chatterUsersUrl = sr.context.links.chatterUsersUrl;
          
@@ -53,10 +58,7 @@
 				console.log("fail");
 			}
 
-			 // Save the token
-            Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
-			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+
     }
 
         });
