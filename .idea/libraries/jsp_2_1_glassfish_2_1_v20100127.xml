@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jsp-2.1-glassfish-2.1.v20100127">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/repo/org/mortbay/jetty/jsp-2.1-glassfish/2.1.v20100127/jsp-2.1-glassfish-2.1.v20100127.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
