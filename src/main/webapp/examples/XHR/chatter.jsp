@@ -16,7 +16,7 @@
 <head>
 
     <title>Chatter Talk Example</title>
-    <link rel="stylesheet" type="text/css" href="/examples/chatter-talk/talk.css" />
+    <link rel="stylesheet" type="text/css" href="/examples/XHR/talk.css" />
 
     <script type="text/javascript" src="/sdk/js/canvas.js"></script>
     <script type="text/javascript" src="/sdk/js/cookies.js"></script>
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="/sdk/js/xd.js"></script>
     <script type="text/javascript" src="/sdk/js/client.js"></script>
     <script type="text/javascript" src="/scripts/json2.js"></script>
-    <script type="text/javascript" src="/examples/chatter-talk/chatter-talk.js"></script>
+    <script type="text/javascript" src="/examples/XHR/chatter-talk.js"></script>
 
 </head>
 <body>
