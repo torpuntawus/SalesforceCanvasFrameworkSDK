@@ -53,7 +53,7 @@ if (!chatterTalk) {
                     else
                     {
                         //document.write("Tor");
-                        alert("Test: " + data.status);
+                        alert("Data Status: " + data.status);
                     }
                 }});
     };
