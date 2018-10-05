@@ -50,9 +50,7 @@
     <br/>
 	<h1>Context</h1>
     <span id='username'></span>
-    <h2>chatterUsersUrl</h2>
-    <span id='chatterUsersUrl'></span>
-	<h3>Signed Request</h3>
+	<h2>Signed Request</h2>
     <span id='signedRequest'></span>
 </body>
 </html>
