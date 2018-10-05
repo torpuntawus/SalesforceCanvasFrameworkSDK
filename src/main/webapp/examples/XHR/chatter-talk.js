@@ -15,7 +15,7 @@ if (!chatterTalk) {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
         };
-        chatterTalk.(sr);
+        chatterTalk.get(sr);
     };
 
 
