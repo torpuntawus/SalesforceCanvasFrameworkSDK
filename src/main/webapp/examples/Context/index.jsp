@@ -41,6 +41,9 @@
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
+            Sfdc.canvas.client.publish(sr.client,
+                {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
+
             Sfdc.canvas.client.subscribe(sr.client,
                 {name : 'mynamespace.statusChanged', onData : function (event) {
                         console.log("Subscribed to custom event ", event);
