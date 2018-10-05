@@ -20,7 +20,7 @@ if (!chatterTalk) {
 
 
     chatterTalk.post =  function(sr, message, callback) {
-        var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
+        var url = sr.context.links.chatterFeedsUrl; //+"/news/"+sr.context.user.userId+"/feed-items";
         var body = {body : {messageSegments : [{type: "Text", text: message}]}};
 
         $$.client.ajax(url,
