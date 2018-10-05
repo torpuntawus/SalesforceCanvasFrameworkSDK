@@ -40,7 +40,6 @@ if (!chatterTalk) {
     {
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
-        System.out.println(sr.context.links);
 
         // Make an XHR call back to salesforce through the supplied browser proxy.
         $$.client.ajax(chatterUsersUrl,
