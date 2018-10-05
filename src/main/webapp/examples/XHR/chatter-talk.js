@@ -15,7 +15,7 @@ if (!chatterTalk) {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
         };
-        chatterTalk.get(sr);
+        chatterTalk.(sr);
     };
 
 
@@ -36,7 +36,7 @@ if (!chatterTalk) {
             });
     };
 
-    chatterTalk.get(sr)
+    chatterTalk.get = function(sr)
     {
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
