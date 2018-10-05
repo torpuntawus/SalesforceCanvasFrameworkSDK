@@ -14,8 +14,8 @@ if (!chatterTalk) {
         $$.byId(button).onclick=function() {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
-            chatterTalk.get(sr);
         };
+        chatterTalk.get(sr);
     };
 
 
