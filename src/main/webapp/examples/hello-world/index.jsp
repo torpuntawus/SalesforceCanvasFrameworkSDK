@@ -43,13 +43,14 @@
 			Sfdc.canvas.client.ajax(chatterUsersUrl, 
 			{client : sr.client,
 			success : function(data){
+
 			// Make sure the status code is OK.
 			if (data.status === 200) {
 			// Alert with how many Chatter users were returned.
-			alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
+				console.log("Got back "  + data.payload.users.length + " users"); // Returned 2 users
 			else
 			{
-			alert("fail");
+				console.log("fail");
 			}
 
 			 // Save the token
