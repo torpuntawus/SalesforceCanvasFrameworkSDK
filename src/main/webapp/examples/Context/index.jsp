@@ -40,6 +40,7 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+            Sfdc.canvas.byId('chatterUsersUrl').innerHTML = JSON.stringify(sr.context.links.chatterUsersUrl);
 
         });
 
@@ -50,7 +51,9 @@
     <br/>
 	<h1>Context</h1>
     <span id='username'></span>
-	<h2>Signed Request</h2>
+    <h2>chatterUsersUrl</h2>
+    <span id='chatterUsersUrl'></span>
+	<h3>Signed Request</h3>
     <span id='signedRequest'></span>
 </body>
 </html>
