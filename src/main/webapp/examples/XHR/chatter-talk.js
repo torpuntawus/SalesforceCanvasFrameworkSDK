@@ -14,7 +14,7 @@ if (!chatterTalk) {
         $$.byId(button).onclick=function() {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
-            chatterTalk.get();
+            chatterTalk.get(sr);
         };
     };
 
@@ -36,10 +36,8 @@ if (!chatterTalk) {
             });
     };
 
-    chatterTalk.get()
+    chatterTalk.get(sr)
     {
-        // Paste the signed request string into a JavaScript object for easy access.
-        var sr = JSON.parse('<%=signedRequestJson%>');
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
 
@@ -50,8 +48,11 @@ if (!chatterTalk) {
                     // Make sure the status code is OK.
                     if (data.status === 200) {
                         // Alert with how many Chatter users were returned.
-                        alert("Got back "  + data.payload.users.length +
-                            " users"); // Returned 2 users
+                        alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
+                    }
+                    else
+                    {
+                        alert("fail");
                     }
                 }});
     }
