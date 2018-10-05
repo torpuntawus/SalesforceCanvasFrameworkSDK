@@ -50,9 +50,11 @@
 			success : function(data){
 
 			// Make sure the status code is OK.
-			if (data.status === 200) {
+			if (data.status === 200) 
+			{
 			// Alert with how many Chatter users were returned.
 				console.log("Got back "  + data.payload.users.length + " users"); // Returned 2 users
+			}
 			else
 			{
 				console.log("fail");
