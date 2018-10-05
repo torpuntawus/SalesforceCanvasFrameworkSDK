@@ -56,6 +56,6 @@ if (!chatterTalk) {
                         alert("fail");
                     }
                 }});
-    }
+    };
 
 }(Sfdc.canvas));
