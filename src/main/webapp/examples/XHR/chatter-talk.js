@@ -52,8 +52,8 @@ if (!chatterTalk) {
                     }
                     else
                     {
-                        document.write("Tor");
-                        alert("fail");
+                        //document.write("Tor");
+                        alert("Test: " + data.status);
                     }
                 }});
     };
