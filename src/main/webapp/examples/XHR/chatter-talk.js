@@ -14,7 +14,7 @@ if (!chatterTalk) {
         $$.byId(button).onclick=function() {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
-            chatterTalk.get(sr);
+            chatterTalk.get(sr,value);
         };
     };
 
@@ -36,7 +36,7 @@ if (!chatterTalk) {
             });
     };
 
-    chatterTalk.get = function(sr)
+    chatterTalk.get = function(sr,message)
     {
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
@@ -52,7 +52,7 @@ if (!chatterTalk) {
                     }
                     else
                     {
-                        //document.write("Tor");
+                        document.write(message);
                         alert("Data Status: " + data.status);
                     }
                 }});

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="311446eb-709d-4e51-a65f-314fda840df2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +38,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="3" />
-          <entry key="js" value="204" />
+          <entry key="js" value="213" />
           <entry key="jsp" value="43" />
         </counts>
       </usages-collector>
@@ -46,7 +46,7 @@
         <counts>
           <entry key="CSS" value="3" />
           <entry key="JSP" value="43" />
-          <entry key="JavaScript" value="204" />
+          <entry key="JavaScript" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -55,7 +55,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+            <state relative-caret-position="-271">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -109,8 +109,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/examples/XHR/talk.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js" />
       </list>
     </option>
   </component>
@@ -192,7 +192,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538732952616" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538734360764" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -216,12 +216,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538713439016</updated>
-      <workItem from="1538713443219" duration="13616000" />
+      <workItem from="1538713443219" duration="15019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13616000" />
+    <option name="totallyTimeSpent" value="15019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -337,13 +337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -361,8 +354,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        <state relative-caret-position="-271">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/XHR/chatter-talk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
     </entry>
