@@ -35,10 +35,24 @@
 
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
+
+			// Reference the Chatter user's URL from Context.Links object.
+			var chatterUsersUrl = sr.context.links.chatterUsersUrl;
+
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+
+			// Make an XHR call back to salesforce through the supplied browser proxy. 
+			Sfdc.canvas.client.ajax(chatterUsersUrl, 
+			{client : sr.client,
+			success : function(data){
+			// Make sure the status code is OK.
+			if (data.status === 200) {
+			// Alert with how many Chatter users were returned.
+			alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
+    }
 
         });
 
