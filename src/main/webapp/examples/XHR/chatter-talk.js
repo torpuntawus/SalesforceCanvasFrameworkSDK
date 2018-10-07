@@ -49,13 +49,7 @@ if (!chatterTalk) {
                     if (data.status === 200) {
                         // Alert with how many Chatter users were returned.
                         alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
-                        //document.write(message);
-                        Sfdc.canvas(function() {
-                            Sfdc.canvas.client.publish(sr.client, {
-                                name: 'sendMessage',
-                                payload: { value : message }
-                            });
-                        });
+                        document.write(message);
                     }
                     else
                     {

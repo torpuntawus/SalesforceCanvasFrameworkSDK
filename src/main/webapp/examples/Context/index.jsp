@@ -40,10 +40,7 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
-            Sfdc.canvas.client.publish(sr.client, {
-                name: 'myns.sendCon',
-                payload: { value : "subscribe success" }
-            });
+
             // Sfdc.canvas.client.publish(sr.client, {
             //     name: 'myns.sendSigned',
             //     payload: { SignedRequest : JSON.stringify(sr.client)}
@@ -51,17 +48,18 @@
 
         });
 
-        <%--function SendCon() {--%>
-            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
-            <%--Sfdc.canvas.client.publish(sr.client, {--%>
-                <%--name: 'myns.sendCon',--%>
-                <%--payload: { Context : JSON.stringify(sr.context) }--%>
-            <%--});--%>
-        <%--}--%>
+        function Subscribe() {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client, {
+                name: 'myns.sendCon',
+                payload: { value : "subscribe success" }
+            });
+        }
     </script>
 
 </head>
 <body>
+    <button onclick="Subscribe">Subscribe</button>>
     <h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
