@@ -43,14 +43,12 @@
 
         });
 
-        function Sending() {
+        function SendCon() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
                 name: 'myns.sendCon',
-                payload: { Context : JSON.stringify(sr.context)} });
-            Sfdc.canvas.client.publish(sr.client, {
-                name: 'myns.sendSign',
-                payload: { SignedRequest : JSON.stringify(sr.client)} });
+                payload: { Context : JSON.stringify(sr.context)},
+                            SignedRequest : JSON.stringify(sr.client)});
         }
 
     </script>
@@ -58,7 +56,7 @@
 </head>
 <body>
     <h1>Context</h1>
-    <button onclick="Sending()">Show Context</button>
+    <button onclick="SendCon()">Show Context</button>
     <span id='username'></span>
 	<h2>Signed Request</h2>
     <span id='signedRequest'></span>
