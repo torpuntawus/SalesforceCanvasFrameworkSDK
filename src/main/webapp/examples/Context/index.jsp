@@ -53,7 +53,7 @@
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
                 name: 'myns.sendSign',
-                payload: { value : JSON.stringify(sr.context)} });
+                payload: { value : JSON.stringify(sr.client)} });
         }
 
     </script>
