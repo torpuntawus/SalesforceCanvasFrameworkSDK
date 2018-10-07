@@ -56,6 +56,7 @@
             });
         }
         function Unsubscribe() {
+            var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});
             alert("unsubscribe success");
         }
