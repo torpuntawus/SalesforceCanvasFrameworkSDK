@@ -51,15 +51,23 @@
         function Subscribe() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
-                name: 'myns.sendCon',
+                name: 'subscribe',
                 payload: { value : "subscribe success" }
+            });
+        }
+        function Unsubscribe() {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client, {
+                name: 'unsubscribe',
+                payload: { value : "unsubscribe success" }
             });
         }
     </script>
 
 </head>
 <body>
-    <button onclick="Subscribe()">Subscribe</button>>
+    <button onclick="Subscribe()">Subscribe</button>
+    <button onclick="Unsubscribe()">Unsubscribe</button>>
     <h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
