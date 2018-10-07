@@ -36,45 +36,34 @@
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
 
-            Sfdc.canvas.client.subscribe(sr.client,
-                {name : 'pnc.testAction', onData : function (data) {
-
-                        var url = sr.context.links.chatterFeedsUrl + "/news/" + sr.context.user.userId + "/feed-items";
-                        var body = {body: {messageSegments: [{type: "Text", text: "We are " + data.status}]}};
-                        Sfdc.canvas.client.ajax(url,
-                            {
-                                client: sr.client,
-                                method: 'POST',
-                                contentType: "application/json",
-                                data: JSON.stringify(body),
-                                success: function (data) {
-                                    if (201 === data.status) {
-                                        console.log('Success');
-                                    }
-                                }
-                            });
-
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
-            // Sfdc.canvas.client.publish(sr.client,
-            //     {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
-            //
-            // Sfdc.canvas.client.subscribe(sr.client,
-            //     {name : 'mynamespace.statusChanged', onData : function (event) {
-            //             console.log("Subscribed to custom event ", event);
-            //         }}
-            // );
+            Sfdc.canvas.client.publish(sr.client,
+                {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
 
-         // });
+            Sfdc.canvas.client.subscribe(sr.client,
+                {name : 'mynamespace.statusChanged', onData : function (event) {
+                        console.log("Subscribed to custom event ", event);
+                    }}
+            );
+
+        });
+
+        function SendValue(pValue) {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client, {
+                name: 'myns.sendVal',
+                payload: { value : pValue} });
+        }
 
     </script>
 
 </head>
 <body>
-    <br/>
+    <button onclick="SendValue(Test)">Submit</button>
 	<h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
