@@ -56,7 +56,7 @@
             });
         }
         function Unsubscribe() {
-            Sfdc.canvas.controller.unsubscribe(
+            Sfdc.canvas.client.unsubscribe(
                 {name : 'subscribe', onData : function ()
                     {
                         alert("Unsubscribe");
