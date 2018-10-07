@@ -52,18 +52,18 @@
 
         });
 
-        function SendValue(pValue) {
+        function SendValue() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
                 name: 'myns.sendVal',
-                payload: { value : pValue} });
+                payload: { value : JSON.stringify(sr.context)} });
         }
 
     </script>
 
 </head>
 <body>
-    <button onclick="SendValue(JSON.stringify(sr.context))">Show Chatter</button>
+    <button onclick="SendValue()">Show Chatter</button>
 	<h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
