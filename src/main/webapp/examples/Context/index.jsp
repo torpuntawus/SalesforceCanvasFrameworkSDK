@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
 
+    <script type="text/javascript" src="/canvas/sdk/js/31.0/controller.js"></script>
     <!-- Include all the canvas JS dependencies in one file -->
     <script type="text/javascript" src="/sdk/js/canvas-all.js"></script>
     <!-- Third part libraries, substitute with your own -->
@@ -57,7 +58,7 @@
         }
         function Unsubscribe() {
             Sfdc.canvas(function() {
-                Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe", onData : function ()
+                Sfdc.canvas.controller.unsubscribe({name : "subscribe", onData : function ()
                     {
                         alert("Unsubscribe");
                     }
