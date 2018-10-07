@@ -41,21 +41,18 @@
             //Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
-            // Sfdc.canvas.client.publish(sr.client,
-            //     {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
-            //
-            // Sfdc.canvas.client.subscribe(sr.client,
-            //     {name : 'mynamespace.statusChanged', onData : function (event) {
-            //             console.log("Subscribed to custom event ", event);
-            //         }}
-            // );
-
         });
 
-        function SendValue() {
+        function SendContext() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
-                name: 'myns.sendVal',
+                name: 'myns.sendCon',
+                payload: { value : JSON.stringify(sr.context)} });
+        }
+        function SendSignedRequest() {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client, {
+                name: 'myns.sendSign',
                 payload: { value : JSON.stringify(sr.context)} });
         }
 
@@ -63,10 +60,11 @@
 
 </head>
 <body>
-    <button onclick="SendValue()">Show Chatter</button>
-	<h1>Context</h1>
+    <h1>Context</h1>
+    <button onclick="SendContext()">Show Context</button>
     <span id='username'></span>
 	<h2>Signed Request</h2>
+    <button onclick="SendSignedRequest()">Show Signed Request</button>
     <span id='signedRequest'></span>
 </body>
 </html>
