@@ -39,7 +39,7 @@
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             //Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
-			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+			//Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
         });
 
