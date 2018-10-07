@@ -36,27 +36,10 @@
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
 
-            Sfdc.canvas.oauth.token(sr.oauthToken);
-            // Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
-            // Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
-
-            Sfdc.canvas.controller.subscribe(
-                {name : 'myns.sendVal', onData : function (data)
-                    {
-                        if (JSON.stringify(data) == 'Show')
-                        {
-                            // alert(JSON.stringify(data));
-                            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
-                            Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
-                        }
-                        else
-                        {
-                            alert("Fail.");
-                        }
-                    }
-                });
             // Save the token
-
+            Sfdc.canvas.oauth.token(sr.oauthToken);
+            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
             // Sfdc.canvas.client.publish(sr.client,
             //     {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
@@ -69,18 +52,18 @@
 
         });
 
-        <%--function SendValue(pValue) {--%>
-            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
-            <%--Sfdc.canvas.client.publish(sr.client, {--%>
-                <%--name: 'myns.sendVal',--%>
-                <%--payload: { value : pValue} });--%>
-        <%--}--%>
+        function SendValue(pValue) {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client, {
+                name: 'myns.sendVal',
+                payload: { value : pValue} });
+        }
 
     </script>
 
 </head>
 <body>
-    <button onclick="SendValue('Test')">Submit</button>
+    <button onclick="SendValue('Show')">Show Chatter</button>
 	<h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
