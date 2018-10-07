@@ -38,7 +38,7 @@
 
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+            //Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
             // Sfdc.canvas.client.publish(sr.client,
@@ -63,7 +63,7 @@
 
 </head>
 <body>
-    <button onclick="SendValue('Show')">Show Chatter</button>
+    <button onclick="SendValue(JSON.stringify(sr.context))">Show Chatter</button>
 	<h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
