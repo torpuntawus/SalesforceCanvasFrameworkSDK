@@ -36,28 +36,45 @@
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
 
-            // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
-			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+            // Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+            // Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
-            Sfdc.canvas.client.publish(sr.client,
-                {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
+            Sfdc.canvas.controller.subscribe(
+                {name : 'myns.sendVal', onData : function (data)
+                    {
+                        if (JSON.stringify(data) == 'Show')
+                        {
+                            // alert(JSON.stringify(data));
+                            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+                            Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+                        }
+                        else
+                        {
+                            alert("Fail.");
+                        }
+                    }
+                });
+            // Save the token
 
-            Sfdc.canvas.client.subscribe(sr.client,
-                {name : 'mynamespace.statusChanged', onData : function (event) {
-                        console.log("Subscribed to custom event ", event);
-                    }}
-            );
+
+            // Sfdc.canvas.client.publish(sr.client,
+            //     {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
+            //
+            // Sfdc.canvas.client.subscribe(sr.client,
+            //     {name : 'mynamespace.statusChanged', onData : function (event) {
+            //             console.log("Subscribed to custom event ", event);
+            //         }}
+            // );
 
         });
 
-        function SendValue(pValue) {
-            var sr = JSON.parse('<%=signedRequestJson%>');
-            Sfdc.canvas.client.publish(sr.client, {
-                name: 'myns.sendVal',
-                payload: { value : pValue} });
-        }
+        <%--function SendValue(pValue) {--%>
+            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
+            <%--Sfdc.canvas.client.publish(sr.client, {--%>
+                <%--name: 'myns.sendVal',--%>
+                <%--payload: { value : pValue} });--%>
+        <%--}--%>
 
     </script>
 
