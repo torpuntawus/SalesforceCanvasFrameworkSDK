@@ -56,12 +56,9 @@
             });
         }
         function Unsubscribe() {
-            Sfdc.canvas.client.unsubscribe(
-                {name : 'subscribe', onData : function ()
-                    {
-                        alert("Unsubscribe");
-                    }
-                });
+            Sfdc.canvas(function() {
+                Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});
+            });
         }
     </script>
 
