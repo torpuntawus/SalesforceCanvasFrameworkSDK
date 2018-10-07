@@ -36,21 +36,39 @@
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
 
+            Sfdc.canvas.client.subscribe(sr.client,
+                {name : 'pnc.testAction', onData : function (data) {
+
+                        var url = sr.context.links.chatterFeedsUrl + "/news/" + sr.context.user.userId + "/feed-items";
+                        var body = {body: {messageSegments: [{type: "Text", text: "We are " + data.status}]}};
+                        Sfdc.canvas.client.ajax(url,
+                            {
+                                client: sr.client,
+                                method: 'POST',
+                                contentType: "application/json",
+                                data: JSON.stringify(body),
+                                success: function (data) {
+                                    if (201 === data.status) {
+                                        console.log('Success');
+                                    }
+                                }
+                            });
+
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
-            Sfdc.canvas.client.publish(sr.client,
-                {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
+            // Sfdc.canvas.client.publish(sr.client,
+            //     {name : "mynamespace.statusChanged", payload : {status : 'Completed'}});
+            //
+            // Sfdc.canvas.client.subscribe(sr.client,
+            //     {name : 'mynamespace.statusChanged', onData : function (event) {
+            //             console.log("Subscribed to custom event ", event);
+            //         }}
+            // );
 
-            Sfdc.canvas.client.subscribe(sr.client,
-                {name : 'mynamespace.statusChanged', onData : function (event) {
-                        console.log("Subscribed to custom event ", event);
-                    }}
-            );
-
-        });
+         // });
 
     </script>
 
