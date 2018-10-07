@@ -44,21 +44,6 @@
                 name: 'myns.sendCon',
                 payload: { value : "subscribe success" }
             });
-
-            Sfdc.canvas.controller.subscribe(
-                { name : 'sendMessage', onData : function (data)
-                    {
-                        if (data != null)
-                        {
-                            alert(JSON.stringify(data.value));
-                            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(data.value);
-                        }
-                        else
-                        {
-                            alert("Can't Subscribe");
-                        }
-                    }
-                });
             // Sfdc.canvas.client.publish(sr.client, {
             //     name: 'myns.sendSigned',
             //     payload: { SignedRequest : JSON.stringify(sr.client)}
