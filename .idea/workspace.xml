@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="311446eb-709d-4e51-a65f-314fda840df2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="311446eb-709d-4e51-a65f-314fda840df2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +13,7 @@
     <session id="1989521040">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
@@ -78,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
+            <state relative-caret-position="69">
+              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -211,16 +209,15 @@
       <option name="presentableId" value="Default" />
       <updated>1538713439016</updated>
       <workItem from="1538713443219" duration="15843000" />
-      <workItem from="1538907634719" duration="20340000" />
+      <workItem from="1538907634719" duration="20690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36183000" />
+    <option name="totallyTimeSpent" value="36533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24659607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -334,8 +331,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/examples/Context/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
+        <state relative-caret-position="69">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
         </state>
       </provider>
     </entry>
