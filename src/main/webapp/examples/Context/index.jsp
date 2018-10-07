@@ -63,7 +63,7 @@
 
 </head>
 <body>
-    <button onclick="SendValue(Test)">Submit</button>
+    <button onclick="SendValue('Test')">Submit</button>
 	<h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
