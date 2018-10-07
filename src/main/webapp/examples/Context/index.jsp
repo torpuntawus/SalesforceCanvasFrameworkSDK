@@ -59,7 +59,7 @@
 
 </head>
 <body>
-    <button onclick="Subscribe">Subscribe</button>>
+    <button onclick="Subscribe()">Subscribe</button>>
     <h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
