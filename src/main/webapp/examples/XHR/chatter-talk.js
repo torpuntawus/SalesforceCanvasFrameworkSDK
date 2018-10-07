@@ -50,9 +50,11 @@ if (!chatterTalk) {
                         // Alert with how many Chatter users were returned.
                         alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
                         //document.write(message);
-                        $$.canvas.client.publish(sr.client, {
-                            name: 'sendMessage',
-                            payload: { value : message }
+                        Sfdc.canvas(function() {
+                            Sfdc.canvas.client.publish(sr.client, {
+                                name: 'sendMessage',
+                                payload: { value : message }
+                            });
                         });
                     }
                     else
