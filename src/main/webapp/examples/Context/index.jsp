@@ -40,31 +40,37 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
             //Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			//Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
-
-        });
-
-        function SendContext() {
-            var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
                 name: 'myns.sendCon',
                 payload: { value : JSON.stringify(sr.context)} });
-        }
-        function SendSignedRequest() {
-            var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client, {
                 name: 'myns.sendSign',
                 payload: { value : JSON.stringify(sr.client)} });
-        }
+
+        });
+
+        <%--function SendContext() {--%>
+            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
+            <%--Sfdc.canvas.client.publish(sr.client, {--%>
+                <%--name: 'myns.sendCon',--%>
+                <%--payload: { value : JSON.stringify(sr.context)} });--%>
+        <%--}--%>
+        <%--function SendSignedRequest() {--%>
+            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
+            <%--Sfdc.canvas.client.publish(sr.client, {--%>
+                <%--name: 'myns.sendSign',--%>
+                <%--payload: { value : JSON.stringify(sr.client)} });--%>
+        <%--}--%>
 
     </script>
 
 </head>
 <body>
     <h1>Context</h1>
-    <button onclick="SendContext()">Show Context</button>
+    <%--<button onclick="SendContext()">Show Context</button>--%>
     <span id='username'></span>
 	<h2>Signed Request</h2>
-    <button onclick="SendSignedRequest()">Show Signed Request</button>
+    <%--<button onclick="SendSignedRequest()">Show Signed Request</button>--%>
     <span id='signedRequest'></span>
 </body>
 </html>
