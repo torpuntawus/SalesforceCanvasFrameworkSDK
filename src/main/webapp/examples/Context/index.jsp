@@ -50,7 +50,7 @@
                     {
                         if (data != null)
                         {
-                            //alert(JSON.stringify(data));
+                            alert(JSON.stringify(data.value));
                             Sfdc.canvas.byId('username').innerHTML = JSON.stringify(data.value);
                         }
                         else
