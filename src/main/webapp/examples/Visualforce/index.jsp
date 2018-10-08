@@ -35,13 +35,18 @@
 
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client,
+                { name: 'js_publish',
+                payload: { Context : "Js publish" }
+            });
+
             Sfdc.canvas.client.subscribe(sr.client,
-                { name : 'sendevent', onData : function (data)
+                { name : 'vs_publish', onData : function (data)
                     {
                         if (data != null)
                         {
-                            //alert(JSON.stringify(data));
-                            Sfdc.canvas.byId('inputtext').innerHTML += JSON.stringify(data.value);
+                            alert(JSON.stringify(data));
+                            //Sfdc.canvas.byId('Showtext').innerHTML += JSON.stringify(data.value);
                             //document.write(JSON.stringify(data.value));
                         }
                         else
