@@ -42,11 +42,11 @@
             Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
         });
 
-        var sr = JSON.parse('<%=signedRequestJson%>');
-        Sfdc.canvas.controller.publish({
-            name: 'sendContext',
-            payload: { Context : JSON.stringify(sr.context),SignedRequest : JSON.stringify(sr.client) }
-        });
+        <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
+        <%--Sfdc.canvas.controller.publish({--%>
+            <%--name: 'sendContext',--%>
+            <%--payload: { Context : JSON.stringify(sr.context),SignedRequest : JSON.stringify(sr.client) }--%>
+        <%--});--%>
         <%--function Unsubscribe() {--%>
             <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
             <%--Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});--%>
