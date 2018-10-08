@@ -38,7 +38,7 @@
 
 
         });
-        Sfdc.canvas.client.subscribe(
+        Sfdc.canvas.client.subscribe(sr.client,
             { name : 'sendevent', onData : function (data)
                 {
                     if (data != null)
