@@ -42,9 +42,8 @@
 			// Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
             Sfdc.canvas.client.publish(sr.client, {
-                name: 'myns.sendContext',
-                payload: { Context : JSON.stringify(sr.context),
-                    SignedRequest : JSON.stringify(sr.client)}
+                name: 'subscribe',
+                payload: { Context : JSON.stringify(sr.context) }
             });
 
         });

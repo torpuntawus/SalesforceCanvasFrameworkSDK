@@ -39,7 +39,7 @@ if (!chatterTalk) {
     {
         $$.byId(button).onclick=function() {
             var value = $$.byId(input).value;
-        };
+        // };
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
 
@@ -51,13 +51,14 @@ if (!chatterTalk) {
                     if (data.status === 200) {
                         // Alert with how many Chatter users were returned.
                         //alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
-                        alert("Get success: " + data.value);
+                        alert("Get success: " + value);
                     }
                     else
                     {
                         alert("Data Status: " + data.status);
                     }
                 }});
+        };
     };
 
 }(Sfdc.canvas));
