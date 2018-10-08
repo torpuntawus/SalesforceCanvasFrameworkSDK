@@ -8,3 +8,7 @@ keystore
 target/
 .settings/
 .DS_Store
+
+.idea/
+
+
