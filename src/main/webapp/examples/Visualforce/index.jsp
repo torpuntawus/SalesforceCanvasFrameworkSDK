@@ -35,24 +35,23 @@
 
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
-
-
+            Sfdc.canvas.client.subscribe(sr.client,
+                { name : 'sendevent', onData : function (data)
+                    {
+                        if (data != null)
+                        {
+                            //alert(JSON.stringify(data));
+                            Sfdc.canvas.byId('inputtext').innerHTML += JSON.stringify(data.value);
+                            //document.write(JSON.stringify(data.value));
+                        }
+                        else
+                        {
+                            alert("Can't Subscribe");
+                        }
+                    }
+                });
         });
-        Sfdc.canvas.client.subscribe(sr.client,
-            { name : 'sendevent', onData : function (data)
-                {
-                    if (data != null)
-                    {
-                        //alert(JSON.stringify(data));
-                        Sfdc.canvas.byId('inputtext').innerHTML += JSON.stringify(data.value);
-                        //document.write(JSON.stringify(data.value));
-                    }
-                    else
-                    {
-                        alert("Can't Subscribe");
-                    }
-                }
-            });
+
         <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
         <%--Sfdc.canvas.controller.publish({--%>
             <%--name: 'sendContext',--%>
