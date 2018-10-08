@@ -52,6 +52,7 @@
             </div>
         </div>
         <div>
+            <span id="inputText"></span>
             <button id="chatter-get" >Get</button>
         </div>
         <script>
@@ -63,7 +64,7 @@
                 Sfdc.canvas.byId('status').innerHTML = data.statusText;
             });
             chatterTalk.init(sr, "chatter-get", "speech-input-field", function(data) {
-                Sfdc.canvas.byId('status').innerHTML = data.statusText;
+                Sfdc.canvas.byId('inputText').innerHTML = data.statusText;
             });
         </script>
     </section>
