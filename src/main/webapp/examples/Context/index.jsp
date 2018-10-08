@@ -41,31 +41,32 @@
             // Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			// Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
-            // Sfdc.canvas.client.publish(sr.client, {
-            //     name: 'myns.sendSigned',
-            //     payload: { SignedRequest : JSON.stringify(sr.client)}
-            // });
+            Sfdc.canvas.client.publish(sr.client, {
+                name: 'myns.sendContext',
+                payload: { Context : JSON.stringify(sr.context),
+                    SignedRequest : JSON.stringify(sr.client)}
+            });
 
         });
 
-        function Subscribe() {
-            var sr = JSON.parse('<%=signedRequestJson%>');
-            Sfdc.canvas.client.publish(sr.client, {
-                name: 'subscribe',
-                payload: { value : "subscribe success" }
-            });
-        }
-        function Unsubscribe() {
-            var sr = JSON.parse('<%=signedRequestJson%>');
-            Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});
-            alert("unsubscribe success");
-        }
+        <%--function Subscribe() {--%>
+            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
+            <%--Sfdc.canvas.client.publish(sr.client, {--%>
+                <%--name: 'subscribe',--%>
+                <%--payload: { value : "subscribe success" }--%>
+            <%--});--%>
+        <%--}--%>
+        <%--function Unsubscribe() {--%>
+            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
+            <%--Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});--%>
+            <%--alert("unsubscribe success");--%>
+        <%--}--%>
     </script>
 
 </head>
 <body>
-    <button onclick="Subscribe()">Subscribe</button>
-    <button onclick="Unsubscribe()">Unsubscribe</button>
+    <%--<button onclick="Subscribe()">Subscribe</button>--%>
+    <%--<button onclick="Unsubscribe()">Unsubscribe</button>--%>
     <h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>
