@@ -33,10 +33,11 @@
             alert("This canvas app must be included within an iframe");
         }
 
-        Sfdc.canvas(function() {
-            var sr = JSON.parse('<%=signedRequestJson%>');
-            Sfdc.canvas.oauth.token(sr.oauthToken);
+        console.log("script tag");
 
+        Sfdc.canvas(function() {
+            console.log("Sfdc.canvas");
+            var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.subscribe(sr.client,
                 { name : 'iicanvasdemo.publish_from_apex', onData : function (data)
                     {
