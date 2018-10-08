@@ -1,4 +1,4 @@
-#stylized {
+#stylized, #get-stylized {
     border: solid 2px #b7ddf2;
     /* Safari 4-5, Chrome 1-9 */
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E5F2F7), to(#FEFFFF));
@@ -18,7 +18,7 @@
     /*background: #ebf4fb;*/
 }
 
-#speech-input-field {
+#speech-input-field, #get-input-field {
     width: 400px;
     height: 50px;
     padding: 10px 15px;

@@ -31,11 +31,11 @@
 <body>
 <div class="slide device-access" id="speech-input">
     <section>
-        <div id="stylized" class="flex hbox boxcenter">
+        <div id="stylized" class="flex hbox boxcenter" style="margin-bottom: 10px;">
 
             <div style="height:50px;text-align:center">
             <p>
-                <strong>Chatter Talk</strong><br/>
+                <strong>Chatter Talk POST</strong><br/>
             </p>
             </div>
 
@@ -45,10 +45,14 @@
                     Try running Google Chrome with the <code>--enable-speech-input</code> flag.</p>
             </div>
             <div style="height:50px;text-align:center">
-                <button id="chatter-submit" type="submit"></button>
+                <button id="chatter-submit" type="submit" style="background: greenyellow !important;">POST</button>
             </div>
             <div style="height:50px;text-align:center">
                 <span id="status" style="color:green"></span>
+            </div>
+
+            <div style="height:50px;text-align:center">
+                <span>You can view the result here: <a target="_blank" href="https://tmbbank--democr.lightning.force.com/lightning/page/chatter">link</a></span>
             </div>
         </div>
         <div>
@@ -64,6 +68,31 @@
                 Sfdc.canvas.byId('status').innerHTML = data.statusText;
             });
             chatterTalk.init(sr, "chatter-get", "speech-input-field", function() {
+            });
+        </script>
+    </section>
+    <section>
+        <div id="get-stylized" class="flex hbox boxcenter">
+
+            <div style="height:50px;text-align:center">
+                <p>
+                    <strong>Chatter Talk GET</strong><br/>
+                </p>
+            </div>
+            <div style="height:50px;text-align:center">
+                <button id="get-chatter-submit" type="submit" style="background: greenyellow !important;">GET</button>
+            </div>
+            <div style="height:50px;text-align:center">
+                <span id="get-status" style="color:green"></span>
+            </div>
+        </div>
+        <script>
+            if (!('webkitSpeech' in document.createElement('input'))) {
+                document.querySelector('#speech-input p').style.display = 'block';
+            }
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            chatterTalk.initGet(sr, "get-chatter-submit", function(data) {
+                Sfdc.canvas.byId('status').innerHTML = data.statusText;
             });
         </script>
     </section>
