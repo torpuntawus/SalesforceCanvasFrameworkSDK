@@ -44,7 +44,7 @@
                         console.log(data);
                         if (data != null)
                         {
-                            Sfdc.canvas.byId('speech-input-field').innerHTML = "Message: " + JSON.stringify(data.value);
+                            Sfdc.canvas.byId('speech-input-field').value = "Message: " + JSON.stringify(data.value);
                             js_publish();
                         }
                         else
