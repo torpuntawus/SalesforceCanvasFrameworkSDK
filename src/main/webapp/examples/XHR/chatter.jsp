@@ -68,7 +68,7 @@
             <div style="height:50px;text-align:center">
                 <button id="chatter-submit" type="submit" style="background: greenyellow !important;">POST</button>
             </div>
-            <div style="height:50px;text-align:center">
+            <div style="height:auto;text-align:center">
                 <span id="status" style="color:green"></span>
             </div>
 
@@ -105,7 +105,7 @@
         <script>
             var sr = JSON.parse('<%=signedRequestJson%>');
             chatterTalk.initGet(sr, "get-chatter-submit", function (data) {
-                Sfdc.canvas.byId('get-status').innerHTML = JSON.stringify(data.payload.users);
+                Sfdc.canvas.byId('get-status').innerHTML = data;
             });
         </script>
     </section>

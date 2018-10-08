@@ -54,7 +54,7 @@ if (!chatterTalk) {
                     console.log(data);
                     // Make sure the status code is OK.
                     if ($$.isFunction(callback)) {
-                        callback(data);
+                        callback("User that received from " + sr.context.links.chatterUsersUrl + " is :" + data.payload.users.length);
                     }
                 }
             });
