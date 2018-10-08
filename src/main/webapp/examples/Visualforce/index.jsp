@@ -35,6 +35,8 @@
 
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.oauth.token(sr.oauthToken);
+            
             Sfdc.canvas.client.publish(sr.client,
                 { name: 'js_publish',
                 payload: { Context : "Js publish" }
