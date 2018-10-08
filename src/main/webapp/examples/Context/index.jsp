@@ -40,21 +40,13 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
             // Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
 			// Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
-
-            Sfdc.canvas.client.publish(sr.client, {
-                name: 'subscribe',
-                payload: { Context : JSON.stringify(sr.context) }
-            });
-
         });
 
-        <%--function Subscribe() {--%>
-            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
-            <%--Sfdc.canvas.client.publish(sr.client, {--%>
-                <%--name: 'subscribe',--%>
-                <%--payload: { value : "subscribe success" }--%>
-            <%--});--%>
-        <%--}--%>
+        var sr = JSON.parse('<%=signedRequestJson%>');
+        Sfdc.canvas.client.publish(sr.client, {
+            name: 'sendContext',
+            payload: { context : JSON.stringify(sr.context) }
+        });
         <%--function Unsubscribe() {--%>
             <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
             <%--Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});--%>
