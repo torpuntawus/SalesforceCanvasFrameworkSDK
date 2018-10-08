@@ -105,7 +105,7 @@
         <script>
             var sr = JSON.parse('<%=signedRequestJson%>');
             chatterTalk.initGet(sr, "get-chatter-submit", function (data) {
-                Sfdc.canvas.byId('get-status').innerHTML = json.stringify(data.payload.users);
+                Sfdc.canvas.byId('get-status').innerHTML = JSON.stringify(data.payload.users);
             });
         </script>
     </section>
