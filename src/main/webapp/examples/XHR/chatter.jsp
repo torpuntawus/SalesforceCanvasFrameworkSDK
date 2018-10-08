@@ -51,12 +51,18 @@
                 <span id="status" style="color:green"></span>
             </div>
         </div>
+        <div>
+            <button id="chatter-get" >Get</button>
+        </div>
         <script>
             if (!('webkitSpeech' in document.createElement('input'))) {
                 document.querySelector('#speech-input p').style.display = 'block';
             }
             var sr = JSON.parse('<%=signedRequestJson%>');
             chatterTalk.init(sr, "chatter-submit", "speech-input-field", function(data) {
+                Sfdc.canvas.byId('status').innerHTML = data.statusText;
+            });
+            chatterTalk.init(sr, "chatter-get", "speech-input-field", function(data) {
                 Sfdc.canvas.byId('status').innerHTML = data.statusText;
             });
         </script>

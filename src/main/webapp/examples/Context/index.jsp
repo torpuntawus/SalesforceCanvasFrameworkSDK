@@ -38,8 +38,8 @@
 
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
-			Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
+            // Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context);
+			// Sfdc.canvas.byId('signedRequest').innerHTML =  JSON.stringify(sr.client);
 
             // Sfdc.canvas.client.publish(sr.client, {
             //     name: 'myns.sendSigned',
@@ -65,7 +65,7 @@
 </head>
 <body>
     <button onclick="Subscribe()">Subscribe</button>
-    <button onclick="Unsubscribe()">Unsubscribe</button>>
+    <button onclick="Unsubscribe()">Unsubscribe</button>
     <h1>Context</h1>
     <span id='username'></span>
 	<h2>Signed Request</h2>

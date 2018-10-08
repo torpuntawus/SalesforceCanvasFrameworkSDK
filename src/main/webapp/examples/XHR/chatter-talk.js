@@ -14,7 +14,6 @@ if (!chatterTalk) {
         $$.byId(button).onclick=function() {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
-            chatterTalk.get(sr,value);
         };
     };
 
@@ -36,8 +35,11 @@ if (!chatterTalk) {
             });
     };
 
-    chatterTalk.get = function(sr,message)
+    chatterTalk.get = function(sr,button,input,callback)
     {
+        $$.byId(button).onclick=function() {
+            var value = $$.byId(input).value;
+        };
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
 
@@ -49,7 +51,6 @@ if (!chatterTalk) {
                     if (data.status === 200) {
                         // Alert with how many Chatter users were returned.
                         alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
-                        document.write(message);
                     }
                     else
                     {
