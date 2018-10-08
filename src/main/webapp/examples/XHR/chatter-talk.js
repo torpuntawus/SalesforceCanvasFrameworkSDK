@@ -10,25 +10,31 @@ if (!chatterTalk) {
     function onClickHandler() {
     }
 
-    chatterTalk.init =  function(sr, button, input, callback) {
-        $$.byId(button).onclick=function() {
+    chatterTalk.init = function (sr, button, input, callback) {
+        $$.byId(button).onclick = function () {
             var value = $$.byId(input).value;
             chatterTalk.post(sr, value, callback);
-            chatterTalk.get(sr,value);
         };
     };
 
+    chatterTalk.initGet = function (sr, buttonId, callback) {
+        $$.byId(buttonId).onclick = function () {
+            chatterTalk.get(sr, callback);
+        }
+    };
 
-    chatterTalk.post =  function(sr, message, callback) {
-        var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
-        var body = {body : {messageSegments : [{type: "Text", text: message}]}};
+
+    chatterTalk.post = function (sr, message, callback) {
+        var url = sr.context.links.chatterFeedsUrl + "/news/" + sr.context.user.userId + "/feed-items";
+        var body = {body: {messageSegments: [{type: "Text", text: message}]}};
 
         $$.client.ajax(url,
-            {client : sr.client,
+            {
+                client: sr.client,
                 method: 'POST',
                 contentType: "application/json",
                 data: JSON.stringify(body),
-                success : function(data) {
+                success: function (data) {
                     if ($$.isFunction(callback)) {
                         callback(data);
                     }
@@ -36,26 +42,21 @@ if (!chatterTalk) {
             });
     };
 
-    chatterTalk.get = function(sr,message)
-    {
+    chatterTalk.get = function (sr, callback) {
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
 
         // Make an XHR call back to salesforce through the supplied browser proxy.
         $$.client.ajax(chatterUsersUrl,
-            {client : sr.client,
-                success : function(data){
+            {
+                client: sr.client,
+                success: function (data) {
                     // Make sure the status code is OK.
-                    if (data.status === 200) {
-                        // Alert with how many Chatter users were returned.
-                        alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
-                        document.write(message);
+                    if ($$.isFunction(callback)) {
+                        callback(data);
                     }
-                    else
-                    {
-                        alert("Data Status: " + data.status);
-                    }
-                }});
+                }
+            });
     };
 
 }(Sfdc.canvas));
