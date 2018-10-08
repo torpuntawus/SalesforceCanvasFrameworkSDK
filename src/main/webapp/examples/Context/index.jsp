@@ -43,9 +43,9 @@
         });
 
         var sr = JSON.parse('<%=signedRequestJson%>');
-        Sfdc.canvas.client.publish(sr.client, {
+        Sfdc.canvas.controller.publish({
             name: 'sendContext',
-            payload: { context : JSON.stringify(sr.context) }
+            payload: { Context : JSON.stringify(sr.context),SignedRequest : JSON.stringify(sr.client) }
         });
         <%--function Unsubscribe() {--%>
             <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
