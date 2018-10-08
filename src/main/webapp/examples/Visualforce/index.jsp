@@ -33,18 +33,14 @@
             alert("This canvas app must be included within an iframe");
         }
 
-        console.log("script tag");
-
         Sfdc.canvas(function() {
-            console.log("Sfdc.canvas");
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.subscribe(sr.client,
                 { name : 'iicanvasdemo.publish_from_apex', onData : function (data)
                     {
-                        console.log(data);
                         if (data != null)
                         {
-                            Sfdc.canvas.byId('speech-input-field').value = "Message: " + JSON.stringify(data.value);
+                            Sfdc.canvas.byId('speech-input-field').value = data.text;
                             js_publish();
                         }
                         else
@@ -59,7 +55,7 @@
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.client.publish(sr.client,
                 { name: 'iicanvasdemo.publish_from_jsp',
-                    payload: { Text : "We receive your message" }
+                    payload: { text : "We receive your message" }
                 });
         }
     </script>
