@@ -38,7 +38,7 @@
 
 
         });
-        Sfdc.canvas.controller.subscribe(
+        Sfdc.canvas.client.subscribe(
             { name : 'sendevent', onData : function (data)
                 {
                     if (data != null)
@@ -69,7 +69,6 @@
 <body>
     <%--<button onclick="Subscribe()">Subscribe</button>--%>
     <%--<button onclick="Unsubscribe()">Unsubscribe</button>--%>
-    <h1>Text</h1>
     <span id='inputtext'></span>
 </body>
 </html>
