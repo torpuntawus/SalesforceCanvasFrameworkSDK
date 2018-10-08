@@ -51,6 +51,7 @@ if (!chatterTalk) {
             {
                 client: sr.client,
                 success: function (data) {
+                    console.log(data);
                     // Make sure the status code is OK.
                     if ($$.isFunction(callback)) {
                         callback(data);
