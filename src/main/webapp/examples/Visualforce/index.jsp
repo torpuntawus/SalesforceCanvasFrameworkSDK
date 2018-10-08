@@ -37,10 +37,10 @@
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.oauth.token(sr.oauthToken);
             
-            Sfdc.canvas.client.publish(sr.client,
-                { name: 'js_publish',
-                payload: { Context : "Js publish" }
-            });
+            // Sfdc.canvas.client.publish(sr.client,
+            //     { name: 'js_publish',
+            //     payload: { Context : "Js publish" }
+            // });
 
             Sfdc.canvas.client.subscribe(sr.client,
                 { name : 'vs_publish', onData : function (data)
@@ -64,17 +64,21 @@
             <%--name: 'sendContext',--%>
             <%--payload: { Context : JSON.stringify(sr.context),SignedRequest : JSON.stringify(sr.client) }--%>
         <%--});--%>
-        <%--function Unsubscribe() {--%>
-            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
-            <%--Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});--%>
-            <%--alert("unsubscribe success");--%>
-        <%--}--%>
+        function js_publish() {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client,
+                { name: 'js_publish',
+                    payload: { Text : document.getElementById('textBox').value }
+                });
+        }
     </script>
 
 </head>
 <body>
     <%--<button onclick="Subscribe()">Subscribe</button>--%>
     <%--<button onclick="Unsubscribe()">Unsubscribe</button>--%>
-    <span id='inputtext'></span>
+    <h1 class="text">JSP</h1>
+    <input type="text" id="textBox" value=""></input>
+    <button onclick="js_publish()">Go</button>
 </body>
 </html>
