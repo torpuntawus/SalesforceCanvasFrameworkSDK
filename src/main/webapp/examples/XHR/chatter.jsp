@@ -64,7 +64,7 @@
                 Sfdc.canvas.byId('status').innerHTML = data.statusText;
             });
             chatterTalk.init(sr, "chatter-get", "speech-input-field", function(data) {
-                Sfdc.canvas.byId('inputText').innerHTML = data.statusText;
+                Sfdc.canvas.byId('inputText').innerHTML = data.value;
             });
         </script>
     </section>
