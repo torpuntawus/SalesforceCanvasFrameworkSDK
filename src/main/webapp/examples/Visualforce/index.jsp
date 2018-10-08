@@ -6,7 +6,7 @@
     String[] signedRequest = parameters.get("signed_request");
     if (signedRequest == null) {%>
         This App must be invoked via a signed request!<%
-		
+
         return;
     }
     //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
@@ -36,20 +36,14 @@
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             Sfdc.canvas.oauth.token(sr.oauthToken);
-            
-            Sfdc.canvas.client.publish(sr.client,
-                { name: 'js_publish',
-                payload: { Context : "Js publish" }
-            });
 
             Sfdc.canvas.client.subscribe(sr.client,
-                { name : 'vs_publish', onData : function (data)
+                { name : 'iicanvasdemo.publist_from_apex', onData : function (data)
                     {
                         if (data != null)
                         {
-                            alert(JSON.stringify(data));
-                            //Sfdc.canvas.byId('Showtext').innerHTML += JSON.stringify(data.value);
-                            //document.write(JSON.stringify(data.value));
+                            Sfdc.canvas.byId('speech-input-field').innerHTML = "Message: " + JSON.stringify(data.value);
+                            js_publish();
                         }
                         else
                         {
@@ -59,22 +53,18 @@
                 });
         });
 
-        <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
-        <%--Sfdc.canvas.controller.publish({--%>
-            <%--name: 'sendContext',--%>
-            <%--payload: { Context : JSON.stringify(sr.context),SignedRequest : JSON.stringify(sr.client) }--%>
-        <%--});--%>
-        <%--function Unsubscribe() {--%>
-            <%--var sr = JSON.parse('<%=signedRequestJson%>');--%>
-            <%--Sfdc.canvas.client.unsubscribe(sr.client, {name : "subscribe"});--%>
-            <%--alert("unsubscribe success");--%>
-        <%--}--%>
+        function js_publish() {
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client,
+                { name: 'iicanvasdemo.publish_from_jsp',
+                    payload: { Text : "We receive your message" }
+                });
+        }
     </script>
 
 </head>
 <body>
-    <%--<button onclick="Subscribe()">Subscribe</button>--%>
-    <%--<button onclick="Unsubscribe()">Unsubscribe</button>--%>
-    <span id='inputtext'></span>
+    <h1>JSP</h1>
+    <input disabled id="speech-input-field" type="text" x-webkit-speech="" placeholder="Value from Apex">
 </body>
 </html>

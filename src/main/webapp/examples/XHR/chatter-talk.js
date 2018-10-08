@@ -42,15 +42,7 @@ if (!chatterTalk) {
             });
     };
 
-<<<<<<< HEAD
-    chatterTalk.get = function(sr,button,input,callback)
-    {
-        $$.byId(button).onclick=function() {
-            var value = $$.byId(input).value;
-        // };
-=======
     chatterTalk.get = function (sr, callback) {
->>>>>>> b9ffbdc81187bb5dc57ddd38c50ecc961b03d03f
         // Reference the Chatter user's URL from Context.Links object.
         var chatterUsersUrl = sr.context.links.chatterUsersUrl;
 
@@ -59,27 +51,13 @@ if (!chatterTalk) {
             {
                 client: sr.client,
                 success: function (data) {
+                    console.log(data);
                     // Make sure the status code is OK.
-<<<<<<< HEAD
-                    if (data.status === 200) {
-                        // Alert with how many Chatter users were returned.
-                        //alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
-                        alert("Get success: " + value);
-                        Sfdc.canvas.byId('inputText').innerHTML = value;
-                    }
-                    else
-                    {
-                        alert("Data Status: " + data.status);
-                    }
-                }});
-        };
-=======
                     if ($$.isFunction(callback)) {
-                        callback(data);
+                        callback("User length that received from " + sr.context.links.chatterUsersUrl + " is : " + data.payload.users.length);
                     }
                 }
             });
->>>>>>> b9ffbdc81187bb5dc57ddd38c50ecc961b03d03f
     };
 
 }(Sfdc.canvas));
