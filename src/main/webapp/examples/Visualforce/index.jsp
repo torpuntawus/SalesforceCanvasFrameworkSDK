@@ -38,8 +38,9 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
 
             Sfdc.canvas.client.subscribe(sr.client,
-                { name : 'iicanvasdemo.publist_from_apex', onData : function (data)
+                { name : 'iicanvasdemo.publish_from_apex', onData : function (data)
                     {
+                        console.log(data);
                         if (data != null)
                         {
                             Sfdc.canvas.byId('speech-input-field').innerHTML = "Message: " + JSON.stringify(data.value);
