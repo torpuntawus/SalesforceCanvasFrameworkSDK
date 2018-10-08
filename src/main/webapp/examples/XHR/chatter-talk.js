@@ -52,6 +52,7 @@ if (!chatterTalk) {
                         // Alert with how many Chatter users were returned.
                         //alert("Got back "  + data.payload.users.length + " users"); // Returned 2 users
                         alert("Get success: " + value);
+                        Sfdc.canvas.byId('inputText').innerHTML = value;
                     }
                     else
                     {
